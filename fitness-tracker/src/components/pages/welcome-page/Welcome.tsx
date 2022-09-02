@@ -1,5 +1,5 @@
 import React from "react";
-import { PropsFace } from "../../App";
+import { PropsFace } from "../../../App";
 import styles from "../welcome-page/styles.module.css";
 
 interface Iprops {

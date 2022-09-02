@@ -1,5 +1,6 @@
-import WelcomePage from "./pages/welcome-page/Welcome";
+// import WelcomePage from "./components/pages/WelcomePage/Components/WelcomePageComponent/WelcomePage";
 import React from "react";
+import { WelcomePage } from "../src/components/pages";
 
 export interface PropsFace {
 	msg: String;
