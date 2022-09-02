@@ -1,6 +1,6 @@
 import React from "react";
-import { PropsFace } from "../../../App";
-import styles from "../welcome-page/styles.module.css";
+import { PropsFace } from "../../../../../App";
+import styles from "./welcomePage.module.css";
 
 interface Iprops {
 	message: PropsFace;
@@ -11,5 +11,3 @@ function WelcomePage({ message }: Iprops): JSX.Element {
 }
 
 export default WelcomePage;
-
-
