@@ -1,12 +1,22 @@
-import React from "react";
+import React, { useState, useRef } from "react";
 // import { PropsFace } from "../../../../../App";
 import styles from "./welcomePage.module.css";
 
-// interface Iprops {
-// 	message: PropsFace;
-// }
-
 function WelcomePage(): JSX.Element {
+	const [name, setName] = useState("");
+
+	let nameRef = useRef(null);
+
+	const onClickHandler = (e: any) => {
+		e.preventDefault();
+
+		let nameInput = nameRef.current.value;
+		console.log(nameInput);
+
+		setName(nameInput);
+		nameRef.current.value = "";
+	};
+
 	return (
 		<div className={styles.container}>
 			<h1 className={styles.heading}>
@@ -24,11 +34,18 @@ function WelcomePage(): JSX.Element {
 					name="name"
 					placeholder="name"
 					className={styles.input}
+					ref={nameRef}
 				/>
-				<button type="submit" className={styles.input_button}>
+				<button
+					type="submit"
+					className={styles.input_button}
+					onClick={onClickHandler}
+				>
 					Enter
 				</button>
 			</div>
+
+			<h2>{name}</h2>
 		</div>
 	);
 }
