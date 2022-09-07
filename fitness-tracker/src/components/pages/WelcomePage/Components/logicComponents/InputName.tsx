@@ -3,39 +3,40 @@ import styles from "../WelcomePageComponent/welcomePage.module.css";
 
 const InputName = (): JSX.Element => {
 	const [name, setName] = useState("");
+	const [message, setMessage] = useState("");
 
-	let nameRef = useRef<HTMLInputElement>(null);
-
-	const onClickHandler = (e: any) => {
+	const onSubmitHandler = (e: any) => {
 		e.preventDefault();
+		// console.log("click handler working!");
 
-		let nameCurrentRef = nameRef.current;
-		// console.log(nameRef);
-
-		if (null !== nameCurrentRef) {
-			setName(nameCurrentRef.value);
-			nameCurrentRef.value = "";
+		if (name.trim().length == 0) {
+			setMessage(
+				"Oopsie, looks like there is no name, please enter a name to begin!"
+			);
+		} else {
+			localStorage.setItem("username", name);
+			setName("");
 		}
 	};
 	return (
 		<div>
-			<div className={styles.input_container}>
+			{message}
+			<form className={styles.input_container} onSubmit={onSubmitHandler}>
 				<input
 					type="text"
 					name="name"
 					placeholder="name"
+					minLength={3}
+					maxLength={15}
+					required={true}
+					onChange={(e) => setName(e.target.value)}
 					className={styles.input}
-					ref={nameRef}
+					value={name}
 				/>
-				<button
-					type="submit"
-					className={styles.input_button}
-					onClick={onClickHandler}
-				>
+				<button type="submit" className={styles.input_button}>
 					Enter
 				</button>
-			</div>
-			<h2>{name}</h2>
+			</form>
 		</div>
 	);
 };
