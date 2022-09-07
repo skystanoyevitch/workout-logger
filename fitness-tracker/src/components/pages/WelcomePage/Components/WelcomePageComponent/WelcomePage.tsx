@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 import styles from "./welcomePage.module.css";
-import InputName from "../logicComponents/inputName";
+import InputName from "../logicComponents/InputName";
 
 function WelcomePage(): JSX.Element {
 	return (
