@@ -1,13 +1,13 @@
 import React from "react";
 import { WelcomePage } from "../src/components/pages";
-import { FrontPage } from "./components/pages/FrontPage/Components/FrontPage";
+import { FrontPage } from "./components/pages";
 
-function App() {
+const App: React.FC = () => {
 	return (
 		<div className="">
-			<WelcomePage />
+			{localStorage.getItem("username") ? <FrontPage /> : <WelcomePage />}
 		</div>
 	);
-}
+};
 
 export default App;
