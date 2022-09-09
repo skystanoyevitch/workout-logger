@@ -3,8 +3,7 @@ import ReactDOM from "react-dom/client";
 import App from "./App";
 import "./index.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { FrontPage } from "./components/pages/FrontPage/Components/FrontPage";
-
+import { FrontPage } from "./components/pages";
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
 	<BrowserRouter>
 		<Routes>
