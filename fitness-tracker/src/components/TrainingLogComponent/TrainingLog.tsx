@@ -1,7 +1,8 @@
 import React from "react";
 import Styles from "../TrainingLogComponent/Styles/trainingLog.module.css";
+import { InputForm } from "./Components/InputForm";
 
-const TrainingLog = ():JSX.Element => {
+const TrainingLog = (): JSX.Element => {
 	const username: string | undefined = localStorage
 		.getItem("username")
 		?.toUpperCase();
@@ -16,6 +17,7 @@ const TrainingLog = ():JSX.Element => {
 			<h3 className={Styles.subheading}>
 				lets add some details to begin...
 			</h3>
+			<InputForm />
 		</div>
 	);
 };
