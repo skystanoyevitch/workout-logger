@@ -1,18 +1,11 @@
-import React, { useState } from "react";
+// import React, { useState } from "react";
+// import { useNavigate } from "react-router-dom";
 import styles from "./Styles/welcome.module.css";
-import { useNavigate } from "react-router-dom";
 import UsernameInput from "./Components/usernameInput Component/UsernameInput";
 
 const Welcome = (): JSX.Element => {
-	const [name, setName] = useState<string>("");
-	const navigate = useNavigate();
-
-	const onSubmitHandler = (e: React.FormEvent) => {
-		e.preventDefault();
-		localStorage.setItem("username", name);
-		navigate("/traininglog");
-	};
-
+	// const [name, setName] = useState<string>("");
+	// const navigate = useNavigate();
 	return (
 		<div className={styles.container}>
 			<h1 className={styles.heading}>
@@ -23,9 +16,9 @@ const Welcome = (): JSX.Element => {
 				to start, please type in your name
 			</h3>
 			<UsernameInput
-				name={name}
-				setName={setName}
-				submitName={onSubmitHandler}
+				// name={name}
+				// setName={setName}
+				// submitName={onSubmitHandler}
 			/>
 		</div>
 	);
