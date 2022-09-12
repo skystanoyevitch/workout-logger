@@ -1,5 +1,5 @@
-import React, { useState, useRef } from "react";
-import styles from "../../Styles/welcomePage.module.css";
+// import React, { useState, useRef } from "react";
+import styles from "../../Styles/welcome.module.css";
 
 interface Props {
 	name: string;

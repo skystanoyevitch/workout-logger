@@ -1,8 +1,7 @@
 import React from "react";
-import Styles from "../FrontPage/Styles/frontpage.module.css";
-import { useLocation } from "react-router-dom";
+import Styles from "../TrainingLogComponent/Styles/trainingLog.module.css";
 
-const FrontPage: React.FC = () => {
+const TrainingLog = ():JSX.Element => {
 	const username: string | undefined = localStorage
 		.getItem("username")
 		?.toUpperCase();
@@ -21,4 +20,4 @@ const FrontPage: React.FC = () => {
 	);
 };
 
-export default FrontPage;
+export default TrainingLog;

@@ -1,16 +1,16 @@
 import React, { useState } from "react";
-import styles from "./Styles/welcomePage.module.css";
+import styles from "./Styles/welcome.module.css";
 import { useNavigate } from "react-router-dom";
 import UsernameInput from "./Components/usernameInput Component/UsernameInput";
 
-const WelcomePage: React.FC = () => {
+const Welcome = (): JSX.Element => {
 	const [name, setName] = useState<string>("");
 	const navigate = useNavigate();
 
 	const onSubmitHandler = (e: React.FormEvent) => {
 		e.preventDefault();
 		localStorage.setItem("username", name);
-		navigate("/frontpage");
+		navigate("/traininglog");
 	};
 
 	return (
@@ -31,4 +31,4 @@ const WelcomePage: React.FC = () => {
 	);
 };
 
-export default WelcomePage;
+export default Welcome;

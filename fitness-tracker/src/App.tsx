@@ -1,11 +1,11 @@
 import React from "react";
-import { WelcomePage } from "../src/components/pages";
-import { FrontPage } from "./components/pages";
+import TrainingLog from "./components/TrainingLogComponent/TrainingLog";
+import Welcome from "./components/WelcomeComponent/Welcome";
 
 const App: React.FC = () => {
 	return (
 		<div className="">
-			{localStorage.getItem("username") ? <FrontPage /> : <WelcomePage />}
+			{localStorage.getItem("username") ? <TrainingLog /> : <Welcome />}
 		</div>
 	);
 };
