@@ -1,21 +1,15 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import styles from "../../Styles/welcome.module.css";
+import { UsernameInputInterface } from "../../Welcome";
 
-// interface Props {
-// 	name: string;
-// 	setName: React.Dispatch<React.SetStateAction<string>>;
-// 	submitName: (e: React.FormEvent) => void;
-// }
-
-const UsernameInput = (): JSX.Element => {
-	const [name, setName] = useState<string>("");
-	const navigate = useNavigate();
-
-	const onSubmitHandler = (e: React.FormEvent) => {
-		e.preventDefault();
-		localStorage.setItem("username", name);
-		navigate("/traininglog");
+const UsernameInput = ({
+	name,
+	setName,
+	onSubmitHandler,
+}: UsernameInputInterface): JSX.Element => {
+	const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+		setName(e.target.value);
+		// localStorage.setItem("username", name);
 	};
 
 	return (
@@ -27,7 +21,7 @@ const UsernameInput = (): JSX.Element => {
 					placeholder="name"
 					minLength={3}
 					maxLength={15}
-					onChange={(e) => setName(e.target.value)}
+					onChange={onChangeHandler}
 					className={styles.input}
 					value={name}
 					required
@@ -35,9 +29,17 @@ const UsernameInput = (): JSX.Element => {
 				/>
 
 				{name.length >= 3 && (
-					<button type="submit" className={styles.input_button}>
-						Enter
-					</button>
+					<Link to="/traininglog">
+						<button
+							type="submit"
+							onClick={() =>
+								localStorage.setItem("username", name)
+							}
+							className={styles.input_button}
+						>
+							Enter
+						</button>
+					</Link>
 				)}
 			</form>
 		</div>
