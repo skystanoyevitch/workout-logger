@@ -1,11 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import TrainingLog from "./components/TrainingLogComponent/TrainingLog";
 import Welcome from "./components/WelcomeComponent/Welcome";
 
-const App: React.FC = () => {
+const App = (): JSX.Element => {
+	const [name, setName] = useState<string>("");
+
+	const onSubmitHandler = (e: React.FormEvent) => {
+		e.preventDefault();
+		console.log(name);
+	};
 	return (
 		<div className="">
-			{localStorage.getItem("username") ? <TrainingLog /> : <Welcome />}
+			{localStorage.getItem("username") ? (
+				<TrainingLog />
+			) : (
+				<Welcome
+					onSubmitHandler={onSubmitHandler}
+					name={name}
+					setName={setName}
+				/>
+			)}
 		</div>
 	);
 };
