@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
 
 /* Headings and containers */
-.container {
+/* .container {
 	margin-left: auto;
 	margin-right: auto;
 	width: 50%;
@@ -25,11 +25,11 @@
 
 .text_sub_color {
 	color: #125e54;
-}
+} */
 
 /* Input */
 
-.input_container {
+/* .input_container {
 	margin: 3rem;
 	text-align: center;
 	display: flex;
@@ -51,4 +51,4 @@
 	color: white;
 	border: #ac2286;
 	margin-left: 0.5rem;
-}
+} */
