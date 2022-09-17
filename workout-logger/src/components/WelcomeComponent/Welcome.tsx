@@ -1,8 +1,14 @@
+// * possilby revert back to old styles
+// import styles from "./Styles/welcome.module.css";
+
+// React Imports
 import React, { useState } from "react";
-// import { useNavigate } from "react-router-dom";
-import styles from "./Styles/welcome.module.css";
+
+// Component Imports
 import UsernameInput from "./Components/usernameInput Component/UsernameInput";
 
+// Third Party Imports
+import { Container, Typography } from "@mui/material";
 
 export interface UsernameInputInterface {
 	name: string;
@@ -10,24 +16,34 @@ export interface UsernameInputInterface {
 	onSubmitHandler: (e: React.FormEvent) => void;
 }
 
-
-const Welcome = ({name, setName, onSubmitHandler}: UsernameInputInterface): JSX.Element => {
-
+const Welcome = ({
+	name,
+	setName,
+	onSubmitHandler,
+}: UsernameInputInterface): JSX.Element => {
 	return (
-		<div className={styles.container}>
-			<h1 className={styles.heading}>
-				WELCOME TO YOUR PERSONAL{" "}
-				<span className={styles.text_sub_color}>TRAINING LOG</span>
-			</h1>
-			<h3 className={styles.subheading}>
+		<Container
+			maxWidth="md"
+			sx={{
+				display: "grid",
+				placeContent: "center",
+				minHeight: "100vh",
+				textAlign: "center",
+			}}
+		>
+			<Typography variant="h1">
+				WELCOME TO YOUR PERSONAL <span>TRAINING LOG</span>
+			</Typography>
+			<Typography variant="body1" sx={{ margin: 6 }}>
 				to start, please type in your name
-			</h3>
+			</Typography>
+
 			<UsernameInput
 				name={name}
 				setName={setName}
 				onSubmitHandler={onSubmitHandler}
 			/>
-		</div>
+		</Container>
 	);
 };
 

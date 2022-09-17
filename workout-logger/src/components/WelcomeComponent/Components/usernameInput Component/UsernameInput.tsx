@@ -1,6 +1,11 @@
+//React Imports
 import { Link } from "react-router-dom";
-import styles from "../../Styles/welcome.module.css";
+
+// Component Imports
 import { UsernameInputInterface } from "../../Welcome";
+
+// Third Party Imports
+import { Button, TextField, FormControl, Box } from "@mui/material";
 
 const UsernameInput = ({
 	name,
@@ -9,40 +14,48 @@ const UsernameInput = ({
 }: UsernameInputInterface): JSX.Element => {
 	const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
 		setName(e.target.value);
-		// localStorage.setItem("username", name);
 	};
 
 	return (
-		<div>
-			<form className={styles.input_container} onSubmit={onSubmitHandler}>
-				<input
+		<FormControl
+			sx={{
+				display: "flex",
+				justifyContent: "center",
+				placeItems: "center",
+			}}
+			onSubmit={onSubmitHandler}
+		>
+			<Box>
+				<TextField
+					label="Name"
 					type="text"
 					name="name"
 					placeholder="name"
-					minLength={3}
-					maxLength={15}
 					onChange={onChangeHandler}
-					className={styles.input}
 					value={name}
 					required
 					autoFocus
 				/>
 
 				{name.length >= 3 && (
-					<Link to="/traininglog">
-						<button
+					<Link to="/traininglog" style={{ textDecoration: "none" }}>
+						<Button
+							sx={{
+								height: "100%",
+								marginLeft: 2,
+							}}
+							variant="contained"
 							type="submit"
 							onClick={() =>
 								localStorage.setItem("username", name)
 							}
-							className={styles.input_button}
 						>
 							Enter
-						</button>
+						</Button>
 					</Link>
 				)}
-			</form>
-		</div>
+			</Box>
+		</FormControl>
 	);
 };
 
