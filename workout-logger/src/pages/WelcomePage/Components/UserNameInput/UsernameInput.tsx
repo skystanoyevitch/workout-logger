@@ -27,7 +27,7 @@ const UsernameInput = ({
 		>
 			<Box>
 				<TextField
-					label="Name"
+					label="name"
 					type="text"
 					name="name"
 					placeholder="name"

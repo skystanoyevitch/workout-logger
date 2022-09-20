@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import TrainingLog from "./components/TrainingLogComponent/TrainingLog";
-import Welcome from "./components/WelcomeComponent/Welcome";
+import TrainingLog from "./pages/TrainingLogPage/TrainingLog";
+import Welcome from "./pages/WelcomePage/Welcome";
 
 const App = (): JSX.Element => {
 	const [name, setName] = useState<string>("");

@@ -5,7 +5,7 @@
 import React, { useState } from "react";
 
 // Component Imports
-import UsernameInput from "./Components/usernameInput Component/UsernameInput";
+import UsernameInput from "./Components/UserNameInput/UsernameInput";
 
 // Third Party Imports
 import { Container, Typography } from "@mui/material";
@@ -25,10 +25,11 @@ const Welcome = ({
 		<Container
 			maxWidth="md"
 			sx={{
-				display: "grid",
-				placeContent: "center",
-				minHeight: "100vh",
+				// display: "grid",
+				// placeContent: "center",
+				// minHeight: "100vh",
 				textAlign: "center",
+				marginTop: 10,
 			}}
 		>
 			<Typography variant="h1">
