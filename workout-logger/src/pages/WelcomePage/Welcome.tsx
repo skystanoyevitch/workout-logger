@@ -25,9 +25,6 @@ const Welcome = ({
 		<Container
 			maxWidth="md"
 			sx={{
-				// display: "grid",
-				// placeContent: "center",
-				// minHeight: "100vh",
 				textAlign: "center",
 				marginTop: 10,
 			}}
