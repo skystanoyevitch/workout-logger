@@ -17,15 +17,14 @@ const UsernameInput = ({
 	};
 
 	return (
-		<FormControl
-			sx={{
-				display: "flex",
-				justifyContent: "center",
-				placeItems: "center",
-			}}
-			onSubmit={onSubmitHandler}
-		>
-			<Box>
+		<form onSubmit={onSubmitHandler}>
+			<Box
+				style={{
+					display: "flex",
+					justifyContent: "center",
+					placeItems: "center",
+				}}
+			>
 				<TextField
 					label="name"
 					type="text"
@@ -35,10 +34,11 @@ const UsernameInput = ({
 					value={name}
 					required
 					autoFocus
+					inputProps={{ minLength: 4 }}
 				/>
 
 				{name.length >= 3 && (
-					<Link to="/traininglog" style={{ textDecoration: "none" }}>
+					<Link to="/traininglog" state={name}>
 						<Button
 							sx={{
 								height: "100%",
@@ -46,16 +46,13 @@ const UsernameInput = ({
 							}}
 							variant="contained"
 							type="submit"
-							onClick={() =>
-								localStorage.setItem("username", name)
-							}
 						>
 							Enter
 						</Button>
 					</Link>
 				)}
 			</Box>
-		</FormControl>
+		</form>
 	);
 };
 
