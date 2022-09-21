@@ -1,0 +1,53 @@
+{
+	"category": [
+		{
+			"categoryName": "Chest",
+			"exercises": [
+				"Barbell Bench Press",
+				"Barbell Incline Bench Press",
+				"Barbell Decline Bench Press"
+			]
+		},
+		{
+			"categoryName": "Back",
+			"exercises": ["Barbell Deadlift", "Barbell Rows", "Pullups"]
+		},
+		{
+			"categoryName": "Shoulders",
+			"exercises": [
+				"Barbell Standing Shoulder Press",
+				"Barbell Sitting Shoulder Press",
+				"Barbell Raises"
+			]
+		},
+		{
+			"categoryName": "Abs",
+			"exercises": ["Cable Crunch", "Flat Planks", "Side Bends"]
+		},
+		{
+			"categoryName": "Legs",
+			"exercises": [
+				"Barbell Squat",
+				"Barbell Front Squat",
+				"Barbell Wide Stance Squat",
+				"Barbell Pause Squat"
+			]
+		},
+		{
+			"categoryName": "Biceps",
+			"exercises": ["Barbell Curl", "Dumbell Curl", "Machine Curl"]
+		},
+		{
+			"categoryName": "Triceps",
+			"exercises": [
+				"Close Grip Bench Press",
+				"Cable Push Downs",
+				"Dumbell Kickbacks"
+			]
+		},
+		{
+			"categoryName": "Cardio",
+			"exercises": ["Tredmill", "Row Machine", "Stair Master"]
+		}
+	]
+}
