@@ -1,6 +1,6 @@
-import { List, ListItem, ListItemButton, Typography } from "@mui/material";
+import { List, ListItemButton, Typography } from "@mui/material";
 import { Container } from "@mui/system";
-export const ExerciseList = (): JSX.Element => {
+export const ExerciseList = ({ nameOfExercise, onHandleNameClick }): JSX.Element => {
 	return (
 		<>
 			<Container sx={{ textAlign: "center", marginTop: 10 }}>
@@ -8,34 +8,20 @@ export const ExerciseList = (): JSX.Element => {
 					Select Exercise
 				</Typography>
 				<List>
-					<ListItemButton
-						sx={{
-							border: "2px solid black",
-							padding: 2,
-							borderRadius: 2,
-						}}
-					>
-						Barbell Bench Press
-					</ListItemButton>
-					<ListItemButton
-						sx={{
-							border: "2px solid black",
-							padding: 2,
-							borderRadius: 2,
-							marginY: 2,
-						}}
-					>
-						Barbell Iincline Bench Press
-					</ListItemButton>
-					<ListItemButton
-						sx={{
-							border: "2px solid black",
-							padding: 2,
-							borderRadius: 2,
-						}}
-					>
-						Barbell Decline Bench Press
-					</ListItemButton>
+					{nameOfExercise.map((exercise, index) => (
+						// console.log(excercise);
+						<ListItemButton
+							sx={{
+								border: "2px solid black",
+								padding: 2,
+								borderRadius: 2,
+							}}
+							key={index}
+							onClick={onHandleNameClick}
+						>
+							{exercise}
+						</ListItemButton>
+					))}
 				</List>
 			</Container>
 		</>
