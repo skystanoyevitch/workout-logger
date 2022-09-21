@@ -2,6 +2,7 @@ import { Container, Typography } from "@mui/material";
 import { InputForm } from "./Components/InputForm";
 import { useLocation } from "react-router-dom";
 import { useState } from "react";
+import WorkoutForm from "./Components/WorkoutForm";
 
 // type nameInput = {
 // 	username: string;
@@ -9,7 +10,7 @@ import { useState } from "react";
 
 type UsernameType = {
 	username: string;
-}
+};
 
 // type UpperCaseName = Uppercase<UsernameType>;
 const TrainingLog = (): JSX.Element => {
@@ -19,6 +20,13 @@ const TrainingLog = (): JSX.Element => {
 		time: new Date().toLocaleTimeString("en-US"),
 		notes: "",
 	});
+
+	// const [addExercise, setAddExercise] = useState({
+	// 	name: "",
+	// 	weight: 0,
+	// 	reps: 0,
+	// 	notes: "",
+	// });
 
 	const location = useLocation();
 	const username = location.state as UsernameType;
@@ -41,6 +49,8 @@ const TrainingLog = (): JSX.Element => {
 					workout={workout}
 					setWorkout={setWorkout}
 					onSubmitHandler={onSubmitHandler}
+					// addExercise={addExercise}
+					// setAddExercise={setAddExercise}
 				/>
 			</Container>
 		</>
