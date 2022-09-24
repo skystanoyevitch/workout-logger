@@ -20,20 +20,20 @@ interface workoutPropsInterface {
 		}>
 	>;
 	onSubmitHandler: (e: React.FormEvent) => void;
-	addExercise: {
-		name: string;
-		weight: number;
-		reps: number;
-		notes: string;
-	};
-	setAddExercise: React.Dispatch<
-		React.SetStateAction<{
-			name: string;
-			weight: number;
-			reps: number;
-			notes: string;
-		}>
-	>;
+	// addExercise: {
+	// 	name: string;
+	// 	weight: number;
+	// 	reps: number;
+	// 	notes: string;
+	// };
+	// setAddExercise: React.Dispatch<
+	// 	React.SetStateAction<{
+	// 		name: string;
+	// 		weight: number;
+	// 		reps: number;
+	// 		notes: string;
+	// 	}>
+	// >;
 }
 
 export const InputForm = ({
