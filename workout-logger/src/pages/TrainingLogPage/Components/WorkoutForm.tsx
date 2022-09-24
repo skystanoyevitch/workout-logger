@@ -1,11 +1,12 @@
 import { Typography, TextField, Box } from "@mui/material";
 
-const WorkoutForm = ({ addExercise }): JSX.Element => {
+const WorkoutForm = ({ exerciseName }): JSX.Element => {
 	return (
 		<>
-			<Typography variant="h4" sx={{ padding: 4 }}>
-				{addExercise.name}
+			<Typography variant="h4" color="initial" sx={{ padding: 4 }}>
+				{exerciseName}
 			</Typography>
+
 			<Box sx={{ display: "flex", flexDirection: "column", gap: 4 }}>
 				<Box
 					sx={{
