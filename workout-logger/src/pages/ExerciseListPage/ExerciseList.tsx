@@ -17,7 +17,7 @@ export const ExerciseList = ({ nameOfExercise, onHandleNameClick }): JSX.Element
 								borderRadius: 2,
 							}}
 							key={index}
-							onClick={onHandleNameClick}
+							onClick={() => onHandleNameClick(exercise)}
 						>
 							{exercise}
 						</ListItemButton>
