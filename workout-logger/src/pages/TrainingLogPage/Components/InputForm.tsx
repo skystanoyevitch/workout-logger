@@ -1,7 +1,7 @@
 import { Box, Button, Container, TextField } from "@mui/material";
 import { Link } from "react-router-dom";
 import WorkoutForm from "./WorkoutForm";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ExerciseCategories } from "../../ExerciseCategoriesPage/ExerciseCategories";
 
 interface workoutPropsInterface {
@@ -20,20 +20,6 @@ interface workoutPropsInterface {
 		}>
 	>;
 	onSubmitHandler: (e: React.FormEvent) => void;
-	// addExercise: {
-	// 	name: string;
-	// 	weight: number;
-	// 	reps: number;
-	// 	notes: string;
-	// };
-	// setAddExercise: React.Dispatch<
-	// 	React.SetStateAction<{
-	// 		name: string;
-	// 		weight: number;
-	// 		reps: number;
-	// 		notes: string;
-	// 	}>
-	// >;
 }
 
 export const InputForm = ({
@@ -42,12 +28,15 @@ export const InputForm = ({
 	onSubmitHandler,
 }: workoutPropsInterface): JSX.Element => {
 	const [openExerciseCategory, setOpenExerciseCategory] = useState(false);
-	const [addExercise, setAddExercise] = useState({
-		name: "",
-		weight: 0,
-		reps: 0,
-		notes: "",
-	});
+	const [addExercise, setAddExercise] = useState([
+		{
+			name: "",
+			// weight: 0,
+			// reps: 0,
+			// notes: "",
+		},
+	]);
+	// console.log(addExercise[0])
 
 	const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
 		const { name, value } = e.target;
@@ -58,19 +47,23 @@ export const InputForm = ({
 			[name]: value,
 			[name]: value,
 		});
-		console.log(workout);
 	};
 
 	const handleOnClick = () => {
 		setOpenExerciseCategory(true);
 	};
 
-	const onHandleNameClick = () => {
-		// console.log("handle click from Exercise List");
-		setAddExercise({ ...addExercise, name: "Jack" });
+	const onHandleNameClick = (exerciseName) => {
+		setAddExercise([...addExercise, { name: exerciseName }]);
 		setOpenExerciseCategory(false);
-		console.log(addExercise);
+		// localStorage.setItem("exercise", JSON.stringify(addExercise));
+		// console.log(addExercise);
 	};
+
+	useEffect(() => {
+		addExercise.map((exercise) => console.log(exercise.name));
+	}, [addExercise]);
+
 	return (
 		<Container maxWidth="sm">
 			{openExerciseCategory ? (
@@ -130,9 +123,17 @@ export const InputForm = ({
 							value={workout.notes}
 						/>
 					</Box>
-					{addExercise.name && (
-						<WorkoutForm addExercise={addExercise} />
-					)}
+					{addExercise.map((exercise, index) => {
+						if (exercise.name) {
+							return (
+								<WorkoutForm
+									exerciseName={exercise.name}
+									key={index}
+								/>
+							);
+						}
+						return false;
+					})}
 
 					<Button
 						sx={{ marginTop: 4 }}
