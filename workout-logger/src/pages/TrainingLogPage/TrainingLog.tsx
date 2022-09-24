@@ -4,15 +4,10 @@ import { useLocation } from "react-router-dom";
 import { useState } from "react";
 import WorkoutForm from "./Components/WorkoutForm";
 
-// type nameInput = {
-// 	username: string;
-// };
-
 type UsernameType = {
 	username: string;
 };
 
-// type UpperCaseName = Uppercase<UsernameType>;
 const TrainingLog = (): JSX.Element => {
 	const [workout, setWorkout] = useState({
 		name: "",
@@ -33,6 +28,8 @@ const TrainingLog = (): JSX.Element => {
 
 	const onSubmitHandler = (e: React.FormEvent) => {};
 
+	const props = { workout, setWorkout, onSubmitHandler };
+
 	return (
 		<>
 			<Container
@@ -45,13 +42,7 @@ const TrainingLog = (): JSX.Element => {
 				<Typography variant="body1" paddingY={4}>
 					lets add some details to begin...
 				</Typography>
-				<InputForm
-					workout={workout}
-					setWorkout={setWorkout}
-					onSubmitHandler={onSubmitHandler}
-					// addExercise={addExercise}
-					// setAddExercise={setAddExercise}
-				/>
+				<InputForm {...props} />
 			</Container>
 		</>
 	);
