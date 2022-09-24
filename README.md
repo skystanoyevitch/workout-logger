@@ -1,7 +1,7 @@
-# Free Open Source Desktop Workout Tracker
+# Free Open Source Desktop Daily Workout Tracker (in progress)
 - track daily workouts
-- Pick individual Exercises or Combine them and add to your day.
-- Adjust your weight, reps and sets to your needs..custom fit to your own program.
+- Pick individual Exercises and add them to your day.
+- Adjust your weight, reps and sets to your needs.
 
 // FUTURE TODO: 
 - add mobile responsiveness
