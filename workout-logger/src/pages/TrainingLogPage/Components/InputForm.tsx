@@ -31,9 +31,10 @@ export const InputForm = ({
 	const [addExercise, setAddExercise] = useState([
 		{
 			name: "",
-			// weight: 0,
-			// reps: 0,
-			// notes: "",
+			weight: 0,
+			reps: 0,
+			notes: "",
+			sets: 0,
 		},
 	]);
 	// console.log(addExercise[0])
@@ -127,7 +128,8 @@ export const InputForm = ({
 						if (exercise.name) {
 							return (
 								<WorkoutForm
-									exerciseName={exercise.name}
+									exerciseForm={exercise}
+									setAddExercise={setAddExercise}
 									key={index}
 								/>
 							);
