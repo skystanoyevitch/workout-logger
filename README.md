@@ -1,10 +1,23 @@
-# Free Open Source Desktop Daily Workout Tracker (in progress)
-- track daily workouts
-- Pick individual Exercises and add them to your day.
-- Adjust your weight, reps and sets to your needs.
 
-// FUTURE TODO: 
-- add mobile responsiveness
-- Add PWA functionality
-- add ability to Log in with account and save info
-- ?
+# Workout Logger (alpha)
+
+Webapp that allows you to add a custom workout program
+
+## Authors
+
+- [@skystanoyevitch](https://github.com/skystanoyevitch)
+
+
+## Features
+
+- Ability to Create your own exercises depending on your needs
+- Modern and Functional UI
+
+
+## Tech Stack
+
+???
+
+## Optimizations
+
+???
